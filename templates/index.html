@@ -40,10 +40,30 @@
         </div>
         <div class="container"/>
           <h4>Mars Facts</h4>  
-        </div> 
+          {{ mars.table|safe }}
+        </div>  
       </div>
     </div>
-      <!--Add thumbnails of hemispheres here--> 
+    <!--Hemispheres-->
+    <h2 class="text-center">Mars Hemispheres</h2>
+    <!--Add images hemispheres here -->
+    <div class="row" style="padding-bottom:20px">
+      <div class="col-md-6">
+        <img src= {{ mars.hemispheres[0]["img_url"] }} alt="Cerberus Hemisphere" style="width:100%"/>
+          <h3> {{ mars.hemispheres[0]["title"] }}</h3> 
+      </div>
+      <div class="col-md-6">
+        <img src= {{ mars.hemispheres[1]["img_url"] }} alt="Schiaparelli Hemisphere" style="width:100%"/>
+          <h3> {{ mars.hemispheres[1]["title"] }}</h3> 
+      </div>
+      <div class="col-md-6">
+        <img src= {{ mars.hemispheres[2]["img_url"] }} alt="Syrtis Major Hemisphere" style="width:100%"/>
+          <h3> {{ mars.hemispheres[2]["title"] }}</h3> 
+      </div>
+      <div class="col-md-6">
+        <img src= {{ mars.hemispheres[3]["img_url"] }} alt="Valles Marineris Hemisphere" style="width:100%"/>
+          <h3> {{ mars.hemispheres[3]["title"] }}</h3> 
+      </div>
+    </div>
 </body>
 </html>
-

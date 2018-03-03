@@ -74,21 +74,14 @@ def scrape():
     table_df
 
     #Convert table to html table 
-    table_df.to_html('facts_table.html')
+    table=table_df.to_html()
+    table
 
-    # #facts_table.html.replace('/n',"")
-    # #Strip items from html table
-    # soup=BeautifulSoup(open('table_html'), 'html.parser')
-    # table_description=[]
-    # table_values={}
-    # for item in soup.table('tr'):
-    #     #print(item.text)
-    #     table_description.append(item.text.strip(':'))
-    # table_values=dict([(k,v) for k,v in zip (table_description[::2], table_description[1::2])])
-    # #print (table_values)
+    facts_table=table.replace('\n','')
+    facts_table
 
     #  #Add table to dictionary
-    # scraped_mars_data["table"] = table_values
+    scraped_mars_data["table"] = facts_table
 
     ### MARS HEMISPHERES IMAGES FROM USGS ASTROGEOLOGY SITE
     hemisphere_url='https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -115,4 +108,3 @@ def scrape():
     scraped_mars_data["hemispheres"] = hemisphere_image_urls
 
     return scraped_mars_data
-
